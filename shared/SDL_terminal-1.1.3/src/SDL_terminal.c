@@ -140,6 +140,7 @@ SDL_CreateTerminal (void)
     terminal->line_start.x = 0;
     terminal->line_start.y = 0;
     terminal->line_pos = 0;
+    terminal->password_char = 0;
 
     /* History allocation */
     terminal->history_size = 25;
@@ -416,7 +417,7 @@ SDL_TerminalEvent (SDL_Terminal *terminal, const SDL_Event *event)
         } else if (event->key.keysym.unicode) {
             int c = (event->key.keysym.unicode & 0xFF);
             if (SDL_TerminalLineInsertChar(terminal, c) == 0)
-                SDL_TerminalAddChar (terminal, c);
+                SDL_TerminalAddChar (terminal, terminal->password_char ? terminal->password_char : c);
             /* If we were in the middle of the line, we have to render the rest of the line */
             if (terminal->line_pos < strlen(terminal->line)) {
                 int i;

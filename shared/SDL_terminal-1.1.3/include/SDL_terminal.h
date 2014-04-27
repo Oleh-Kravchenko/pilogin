@@ -76,6 +76,8 @@ typedef struct SDL_Terminal {
     int				br_size;				/* Border size around text */
     int				tabsize;				/* Tab size */
 
+    char			password_char;			/* Password symbol, used for input */
+
     char *			line;					/* Edited line */
     Vec2i			line_start;				/* Edited line start position */
     int				line_pos;				/* Position within edited line */
