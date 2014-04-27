@@ -71,6 +71,7 @@ typedef struct SDL_Terminal {
     SDL_Color		default_fg_color;		/* Default text foreground color */
     SDL_Color		bg_color;				/* Current text background color */
     SDL_Color		default_bg_color;		/* Default text background color */
+    SDL_Color		cursor_color;			/* Terminal cursor color */
 
     int				br_size;				/* Border size around text */
     int				tabsize;				/* Tab size */
@@ -122,6 +123,7 @@ int SDL_TerminalSetDefaultForeground (SDL_Terminal *terminal, int red, int green
 int SDL_TerminalSetDefaultBackground (SDL_Terminal *terminal, int red, int green, int blue, int alpha);
 int SDL_TerminalSetForeground (SDL_Terminal *terminal, int red, int green, int blue, int alpha);
 int SDL_TerminalSetBackground (SDL_Terminal *terminal, int red, int green, int blue, int alpha);
+int SDL_TerminalSetCursorColor (SDL_Terminal *terminal, int red, int green, int blue, int alpha);
 int SDL_TerminalEnableBold (SDL_Terminal *terminal);
 int SDL_TerminalEnableUnderline (SDL_Terminal *terminal);
 int SDL_TerminalEnableItalic (SDL_Terminal *terminal);

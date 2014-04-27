@@ -125,6 +125,7 @@ SDL_CreateTerminal (void)
     SDL_TerminalSetDefaultBackground (terminal, 0,0,0,0);
     SDL_TerminalSetForeground (terminal, 0,0,0,255);
     SDL_TerminalSetBackground (terminal, 0,0,0,0);
+    SDL_TerminalSetCursorColor (terminal, 0,0,0,255);
     
     terminal->br_size = 4;
     terminal->tabsize = 4;
@@ -799,6 +800,15 @@ SDL_TerminalSetBackground (SDL_Terminal *terminal, int red, int green, int blue,
     return 0;
 }
 
+int
+SDL_TerminalSetCursorColor (SDL_Terminal *terminal, int red, int green, int blue, int alpha)
+{
+    terminal->cursor_color.r = red;
+    terminal->cursor_color.g = green;
+    terminal->cursor_color.b = blue;
+    terminal->cursor_color.unused = alpha;
+    return 0;
+}
 
 
 
@@ -1422,7 +1432,7 @@ SDL_TerminalRenderCursor (SDL_Terminal *terminal)
     SDL_Color fg = terminal->fg_color;
     SDL_Color bg = terminal->bg_color;
     terminal->fg_color = terminal->color;
-    terminal->bg_color.unused = 255;
+    terminal->bg_color = terminal->cursor_color;
     char c = ' ';
     if (terminal->line_pos < strlen(terminal->line)) {
         c = terminal->line[terminal->line_pos];
