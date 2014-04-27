@@ -1,11 +1,29 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
-PROJECT(ping)
+PROJECT(pilogin)
 
-ADD_DEFINITIONS(-pedantic -std=gnu99 -Wall -Werror -g3)
+INCLUDE_DIRECTORIES(include)
 
 ADD_EXECUTABLE(pilogin
 	main.c
+	sdltool.c
+	strtool.c
+	shared/player2.c
 )
 
-TARGET_LINK_LIBRARIES(pilogin SDL SDL_terminal SDL_image)
+TARGET_LINK_LIBRARIES(pilogin
+	m
+	SDL
+	SDL_gfx
+	SDL_image
+	SDL_terminal
+
+	avutil
+	avformat
+	avcodec
+	swscale
+	z
+	bz2
+)
+
+ADD_SUBDIRECTORY(shared/SDL_terminal-1.1.3 SDL_terminal)
