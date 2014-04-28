@@ -4,7 +4,7 @@ PROJECT(pilogin)
 
 INCLUDE_DIRECTORIES(include)
 
-include(FindSDL)
+INCLUDE(FindSDL)
 
 ADD_EXECUTABLE(pilogin
 	main.c

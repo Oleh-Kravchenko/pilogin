@@ -476,7 +476,7 @@ static int open_file(MainContext* main_context, const char* filename) {
 	
 	// Prepare SDL video output
 #if 1
-	main_context->pict.screen = SDL_SetVideoMode(video_codec_context->width, video_codec_context->height, 32, SDL_HWSURFACE | SDL_FULLSCREEN);
+	main_context->pict.screen = SDL_SetVideoMode(video_codec_context->width, video_codec_context->height, 32, SDL_HWSURFACE | SDL_FULLSCREEN | SDL_DOUBLEBUF);
 	if (main_context->pict.screen == NULL) {
 		fprintf(stderr, "Couldn't set video mode\n");
 		return -1;

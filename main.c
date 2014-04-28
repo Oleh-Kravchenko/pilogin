@@ -196,7 +196,7 @@ int attempt = 0;
 						player_main(video_file, screen);
 
 						SDL_FreeSurface(screen);
-						screen = SDL_SetVideoMode(WIDTH, HEIGHT, 32, SDL_SWSURFACE | SDL_FULLSCREEN);
+						screen = SDL_SetVideoMode(WIDTH, HEIGHT, 32, SDL_HWSURFACE | SDL_FULLSCREEN | SDL_DOUBLEBUF);
 						assert(screen);
 						SDL_WarpMouse(WIDTH / 2, HEIGHT / 2);
 
