@@ -1,0 +1,16 @@
+ABOUT
+=====
+
+Program play video, if password correct.
+
+USAGE
+=====
+
+Diretory ./resource/ or /usr/share/pilogin/resource/, should be filled by normal.png and monofont.ttf files
+./build/pilogin PASSWORD VIDEO_FILE
+
+DEBIAN
+======
+
+To build on debian please install:
+apt-get install libsdl1.2-dev libsdl-ttf2.0-dev libsdl-image1.2-dev libsdl-gfx1.2-dev libsdl-gfx1.2-dev libavcodec-dev libavformat-dev libswscale-dev
