@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 {
 	SDL_Surface *screen, *image;
 	Uint32 last_tick = 0;
-	int fps = 100;
+	int fps = 24;
 
 char password[0x100];
 char video_file[0x100];
