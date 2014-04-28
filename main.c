@@ -110,7 +110,7 @@ strncpy(video_file, argv[2], sizeof(video_file));
 		return(1);
 	}
 
-	screen = SDL_SetVideoMode(WIDTH, HEIGHT, 32, SDL_SWSURFACE | SDL_FULLSCREEN);
+	screen = SDL_SetVideoMode(WIDTH, HEIGHT, 32, SDL_HWSURFACE | SDL_FULLSCREEN | SDL_DOUBLEBUF);
 	assert(screen);
 	SDL_WarpMouse(WIDTH / 2, HEIGHT / 2);
 
@@ -118,8 +118,8 @@ strncpy(video_file, argv[2], sizeof(video_file));
 
 	terminal = SDL_CreateTerminal();
 
-	if (!(-1 == SDL_TerminalSetFont(terminal, "./resource/" FONT, 24))) {
-		if (!(-1 == SDL_TerminalSetFont(terminal, "/usr/share/pilogin/resource/" FONT, 24))) {
+	if (!(-1 == SDL_TerminalSetFont(terminal, "./resource/" FONT, 16))) {
+		if (!(-1 == SDL_TerminalSetFont(terminal, "/usr/share/pilogin/resource/" FONT, 16))) {
 			fprintf(stderr, "Cannot load image\n");
 
 			SDL_DestroyTerminal(terminal);

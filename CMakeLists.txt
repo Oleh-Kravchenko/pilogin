@@ -4,6 +4,8 @@ PROJECT(pilogin)
 
 INCLUDE_DIRECTORIES(include)
 
+include(FindSDL)
+
 ADD_EXECUTABLE(pilogin
 	main.c
 	sdltool.c
@@ -23,7 +25,6 @@ TARGET_LINK_LIBRARIES(pilogin
 	avcodec
 	swscale
 	z
-	bz2
 )
 
 ADD_SUBDIRECTORY(shared/SDL_terminal-1.1.3 SDL_terminal)

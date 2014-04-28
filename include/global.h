@@ -4,8 +4,8 @@
 #define BACKGROUND "normal.png"
 #define FONT "monofont.ttf"
 
-#define WIDTH 1024
-#define HEIGHT 768
+#define WIDTH  656
+#define HEIGHT 416
 
 #define LOGIN_DELAY 3000
 
