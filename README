@@ -12,5 +12,8 @@ Diretory ./resource/ or /usr/share/pilogin/resource/, should be filled by normal
 DEBIAN
 ======
 
-To build on debian please install:
-apt-get install libsdl1.2-dev libsdl-ttf2.0-dev libsdl-image1.2-dev libsdl-gfx1.2-dev libsdl-gfx1.2-dev libavcodec-dev libavformat-dev libswscale-dev
+To build on debian please run:
+$ apt-get install libsdl1.2-dev libsdl-ttf2.0-dev libsdl-image1.2-dev libsdl-gfx1.2-dev libsdl-gfx1.2-dev libavcodec-dev libavformat-dev libswscale-dev
+$ git clone https://github.com/Oleh-Kravchenko/pilogin.git
+$ cd pilogin && mkdir build && cd build
+$ cmake && make
